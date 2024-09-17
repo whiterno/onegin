@@ -31,8 +31,13 @@ static void fprintLine(FILE* fp){
     fputc('\n', fp);
 }
 
-void sortPrint(PtrTxt ptr_txt, cmp_t compare, FILE* fp){
-    quickSort(ptr_txt.ptr_array, sizeof(Line), 0, ptr_txt.line_amount - 1, compare);
+void sortPrint(PtrTxt ptr_txt, cmp_t compare, FILE* fp, int sort_type){
+    if (sort_type == MY_QSORT){
+        quickSort(ptr_txt.ptr_array, sizeof(Line), 0, ptr_txt.line_amount - 1, compare);
+    }
+    else{
+        qsort(ptr_txt.ptr_array, ptr_txt.line_amount, sizeof(Line), compare);
+    }
     fprintTxt(ptr_txt, fp);
 
     fprintLine(fp);

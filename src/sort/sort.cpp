@@ -4,9 +4,9 @@
 #include "../onegin.h"
 #include "../sort/sort.h"
 
-static void swapElements(void* ptr_array, const size_t size_el, const int inx1, const int inx2);
+inline static void swapElements(void* ptr_array, const size_t size_el, const int inx1, const int inx2);
 
-static void swapElements(void* ptr_array, const size_t size_el, const int inx1, const int inx2){
+inline static void swapElements(void* ptr_array, const size_t size_el, const int inx1, const int inx2){
     assert(ptr_array);
 
     void* tmp = (void*)calloc(1, size_el);

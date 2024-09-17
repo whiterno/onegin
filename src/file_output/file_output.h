@@ -3,6 +3,6 @@
 
 #include "../onegin.h"
 
-void sortPrint(PtrTxt ptr_txt, cmp_t compare, FILE* fp);
+void sortPrint(PtrTxt ptr_txt, cmp_t compare, FILE* fp, int sort_type);
 
 #endif

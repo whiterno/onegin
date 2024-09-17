@@ -21,8 +21,8 @@ int main(void){
 
     text = readFile(&ptr_txt);
 
-    sortPrint(ptr_txt, myLinecmp, fp);
-    sortPrint(ptr_txt, myLinecmpRev, fp);
+    sortPrint(ptr_txt, myLinecmp, fp, STANDART_QSORT);
+    sortPrint(ptr_txt, myLinecmpRev, fp, MY_QSORT);
     fputs(text, fp);
 
     fclose(fp);
