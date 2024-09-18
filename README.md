@@ -34,4 +34,6 @@ The goals of the project are quite simple:
 <p align="center"> ~~IT IS HIM~~
 
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://media.lpgenerator.ru/uploads/2016/03/25/learn-to-code.jpg)
+<p align="center">
+  <img width="600" height="380" src="https://sun9-55.userapi.com/impf/WuLjbVVocbc-C2F3iFuwHq3I_FdXFyOCA1Brfw/Z8_8lbFX9PY.jpg?size=600x432&quality=96&sign=11c8d3ad4e8807831066956ebe1203f3&type=album">
+</p>
