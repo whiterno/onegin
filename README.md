@@ -24,8 +24,14 @@ The goals of the project are quite simple:
 
 ## Thanks to the creators
 
-*Creator* - Timofey K.
-*Creator's moral mentor* - Yan S.
-*DED* - DED
+<p align="center">*Creator* - Timofey K.
+<p align="center">*Creator's moral mentor* - Yan S.
+<p align="center">*DED* - DED
+<p align="center"> | |
+<p align="center"> | |
+<p align="center"> | |
+<p align="center"> \  /
+<p align="center"> ~~IT IS HIM~~
+
 
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://media.lpgenerator.ru/uploads/2016/03/25/learn-to-code.jpg)
