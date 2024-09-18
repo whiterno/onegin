@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdio.h>
 #include "../onegin.h"
 #include "../useful/useful.h"
 #include "../file_input_ptrtxt_init/file_input_ptrtxt_init.h"
@@ -11,12 +12,17 @@ static Line* initializeLines(char* text, const int line_amount);
 static void fillPtrTxt(PtrTxt* ptr_txt, char* text);
 static int countLines(const char* text);
 
-char* readFile(PtrTxt * ptr_txt){
+char* readFile(PtrTxt * ptr_txt, const char* file_input){
     assert(ptr_txt);
 
-    size_t fsize = fileSize(FILENAME);
+    size_t fsize = fileSize(file_input);
     char* text = (char*)calloc(fsize + 2, sizeof(char));
-    int fp = open(FILENAME, O_RDONLY);
+    int fp = open(file_input, O_RDONLY);
+
+    if (fp == -1){
+        printf("There is no such file\n");
+        exit(EXIT_FAILURE);
+    }
 
     read(fp, text, fsize);
     close(fp);

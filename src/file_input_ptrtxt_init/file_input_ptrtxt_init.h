@@ -3,6 +3,6 @@
 
 #include "../onegin.h"
 
-char* readFile(PtrTxt * ptr_txt);
+char* readFile(PtrTxt * ptr_txt, const char* file_input);
 
 #endif

@@ -20,9 +20,10 @@ struct PtrTxt{
 
 typedef int (*cmp_t)(const void* el1, const void* el2);
 
-const char FILENAME[] = "../onegin";
-const char FILENAME_OUT[] = "../onegin_sorted";
+const char FILENAME[] = "./onegin.txt";
+const char FILENAME_OUT[] = "./onegin_sorted.txt";
 const char LINE[] = "--------------------------------------------------------------\n";
 const int MAX_READ_LENGTH = 100;
+const int MAX_FILENAME_SIZE = 256;
 
 #endif
