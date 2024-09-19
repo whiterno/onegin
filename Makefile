@@ -1,3 +1,5 @@
+.PHONY: target
+
 Headers := src/comparators/comparators.h src/file_input_ptrtxt_init/file_input_ptrtxt_init.h src/file_output/file_output.h src/sort/sort.h src/useful/useful.h src/onegin.h
 
 a.out: obj/main.o obj/comparators.o obj/file_input_ptrtxt_init.o obj/file_output.o obj/sort.o obj/useful.o obj/console.o
@@ -24,3 +26,5 @@ obj/useful.o: src/useful/useful.cpp $(Headers)
 obj/console.o: src/console/console.cpp $(Headers)
 	g++ -c src/console/console.cpp -o obj/console.o
 
+target:
+	mkdir obj

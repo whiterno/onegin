@@ -5,7 +5,7 @@
 
 #include "console.h"
 
-static int processArgs(int flag);
+static int processArgs(int* flag);
 
 int checkArg(const int argc, const char* argv[], int* flag, char* file_name){
     assert(argv);
@@ -21,29 +21,34 @@ int checkArg(const int argc, const char* argv[], int* flag, char* file_name){
                 *flag = HELP;
                 continue;
             }
-            else return TERMINAL_ERROR;
+            else {
+                *flag = TERMINAL_ERROR;
+                break;
+            };
         }
         if (strcmp(argv[arg], "-f") == 0){
             if (arg + 1 == argc){
-                return TERMINAL_ERROR;
+                *flag = TERMINAL_ERROR;
+                break;
             }
             strcpy(file_name, argv[arg + 1]);
             arg++;
             continue;
         }
-        return TERMINAL_ERROR;
+        *flag = TERMINAL_ERROR;
+        break;
     }
 
-    processArgs(*flag);
+    processArgs(flag);
 
     return *flag;
 }
 
-static int processArgs(int flag){
-    switch(flag){
+static int processArgs(int* flag){
+    switch(*flag){
         case TERMINAL_ERROR:{
             printf("You've made something silly, try again later\n");
-            exit(EXIT_FAILURE);
+            return TERMINAL_ERROR;
         }
         case NO_FLAG:{
             return NO_FLAG;
@@ -51,12 +56,12 @@ static int processArgs(int flag){
         case HELP:{
             printf("\t./a.out  -  for standard read from onegin.txt from onegin folder\n");
             printf("\t./a.out -f [FILENAME]  -  for reading from your own file\n");
-            exit(EXIT_SUCCESS);
+            return TERMINAL_ERROR;
         }
         case FILE_INPUT:{
             return NO_FLAG;
         }
     }
     printf("Unknowm ERROR occured!\n");
-    exit(EXIT_FAILURE);
+    return TERMINAL_ERROR;
 }

@@ -24,6 +24,9 @@ int main(const int argc, const char* argv[]){
     PtrTxt ptr_txt = {.ptr_array = NULL, .line_amount = 0};
 
     checkArg(argc, argv, &flag, file_input);
+    if (flag == TERMINAL_ERROR){
+        return TERMINAL_ERROR;
+    }
 
     text = readFile(&ptr_txt, file_input);
 

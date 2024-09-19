@@ -22,6 +22,21 @@ The goals of the project are quite simple:
 > [!NOTE]
 > And of course this project is realised with understandable codestyle and optimised functions themselves!
 
+## Getting started
+
+As soon as you clone the repository, you will immediately have the question “How can I run the program?”.
+A Makefile has been created for everyone's convenience. You should only write:
+```
+make target
+make
+```
+And magic happenes, everything is compiled! `make target` creates an **obj** folder for objective files (*.o) and `make` compiles eveything. If you want programm to run:
+```
+./a.out
+```
+> [!CAUTION]
+> This project was written on macOS, so problems may arise if you run the program on Windows.
+
 ## Thanks to the creators
 
 <p align="center">*Creator* - Timofey K.
