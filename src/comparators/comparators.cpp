@@ -49,7 +49,7 @@ int myLinecmpRev(const void* line1, const void* line2){
         return 0;
     }
     if (length1 == 0){
-        return -*str2;
+        return - *str2;
     }
     return *str1;
 }

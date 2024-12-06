@@ -16,19 +16,18 @@
 #include "onegin.h"
 
 int main(const int argc, const char* argv[]){
-    char * text = NULL;
-    char file_input[MAX_FILENAME_SIZE];
+    char file_input[MAX_FILENAME_SIZE] = "";
     strcpy(file_input, FILENAME);
-    int flag = NO_FLAG;
-    FILE* fp = fopen(FILENAME_OUT, "w");
-    PtrTxt ptr_txt = {.ptr_array = NULL, .line_amount = 0};
 
+    int flag = NO_FLAG;
     checkArg(argc, argv, &flag, file_input);
     if (flag == TERMINAL_ERROR){
         return TERMINAL_ERROR;
     }
 
-    text = readFile(&ptr_txt, file_input);
+    PtrTxt ptr_txt = {.ptr_array = NULL, .line_amount = 0};
+    char* text = readFile(&ptr_txt, file_input);
+    FILE* fp = fopen(FILENAME_OUT, "w");
 
     sortPrint(ptr_txt, myLinecmp, fp, STANDART_QSORT);
     sortPrint(ptr_txt, myLinecmpRev, fp, MY_QSORT);

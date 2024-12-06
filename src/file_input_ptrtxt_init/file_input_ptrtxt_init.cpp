@@ -10,7 +10,7 @@
 
 static Line* initializeLines(char* text, const int line_amount);
 static void fillPtrTxt(PtrTxt* ptr_txt, char* text);
-static int countLines(const char* text);
+static int countLines(const char* text, const char symbol);
 
 char* readFile(PtrTxt * ptr_txt, const char* file_input){
     assert(ptr_txt);
@@ -30,7 +30,7 @@ char* readFile(PtrTxt * ptr_txt, const char* file_input){
     text[fsize] = '\n';
     text[fsize + 1] = '\0';
 
-    ptr_txt->line_amount = countLines(text);
+    ptr_txt->line_amount = countLines(text, '\n');
     fillPtrTxt(ptr_txt, text);
 
     return text;
@@ -69,12 +69,12 @@ static void fillPtrTxt(PtrTxt* ptr_txt, char* text){
     }
 }
 
-static int countLines(const char* text){
+static int countLines(const char* text, const char symbol){
     assert(text);
 
     int line_amount = 0;
     while (*text != '\0'){
-        text = strchr(text, '\n') + 1;
+        text = strchr(text, symbol) + 1;
         line_amount++;
     }
     return line_amount;

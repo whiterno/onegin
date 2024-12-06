@@ -15,7 +15,7 @@ struct Line{
 
 struct PtrTxt{
     Line* ptr_array;
-    int line_amount;
+    size_t line_amount;
 };
 
 typedef int (*cmp_t)(const void* el1, const void* el2);

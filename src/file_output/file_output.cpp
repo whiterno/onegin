@@ -33,7 +33,7 @@ static void fprintLine(FILE* fp){
 
 void sortPrint(PtrTxt ptr_txt, cmp_t compare, FILE* fp, int sort_type){
     if (sort_type == MY_QSORT){
-        quickSort(ptr_txt.ptr_array, sizeof(Line), 0, ptr_txt.line_amount - 1, compare);
+        quickSort(ptr_txt.ptr_array, sizeof(Line), 0, ptr_txt.line_amount - 1, compare, 0);
     }
     else{
         qsort(ptr_txt.ptr_array, ptr_txt.line_amount, sizeof(Line), compare);
